@@ -204,3 +204,168 @@ Examples:
 - Multiple services can run on the same server using different ports.
 - Most applications have default ports, but they can usually be changed.
 - Knowing common port numbers is essential for AWS, Linux, Kubernetes, Docker, and DevOps interviews.
+
+- # 🚀 DevOps Common Ports Cheat Sheet
+
+## Introduction
+
+Ports allow different applications and services to communicate over a network.
+
+As a DevOps Engineer, knowing the default ports of commonly used tools is essential for:
+
+- AWS Security Groups
+- Linux Firewall (iptables/firewalld)
+- Kubernetes
+- Docker
+- Jenkins
+- Monitoring
+- Databases
+- Interview Preparation
+
+---
+
+# Linux & Networking
+
+| Port | Service | Purpose |
+|------|----------|----------|
+| 22 | SSH | Secure Remote Login to Linux Servers |
+| 53 | DNS | Domain Name Resolution |
+| 80 | HTTP | Web Traffic |
+| 123 | NTP | Time Synchronization |
+| 443 | HTTPS | Secure Web Traffic |
+
+---
+
+# Database Ports
+
+| Port | Database | Purpose |
+|------|-----------|----------|
+| 3306 | MySQL | Relational Database |
+| 5432 | PostgreSQL | Relational Database |
+| 1433 | Microsoft SQL Server | Database |
+| 1521 | Oracle Database | Database |
+| 27017 | MongoDB | NoSQL Database |
+| 6379 | Redis | In-Memory Database / Cache |
+
+---
+
+# Docker Ports
+
+| Port | Service | Purpose |
+|------|----------|----------|
+| 2375 | Docker API | Docker Remote API (Non-TLS) |
+| 2376 | Docker API | Docker Remote API (TLS) |
+| 5000 | Docker Registry | Private Docker Registry |
+
+---
+
+# Kubernetes Ports
+
+| Port | Component | Purpose |
+|------|-----------|----------|
+| 6443 | Kubernetes API Server | Control Plane Communication |
+| 2379-2380 | etcd | Kubernetes Cluster Database |
+| 10250 | Kubelet | Worker Node Communication |
+| 10257 | kube-controller-manager | Controller Manager |
+| 10259 | kube-scheduler | Scheduler |
+| 10256 | kube-proxy | Health Check |
+| 53 | CoreDNS | Internal DNS Resolution |
+| 30000-32767 | NodePort | Expose Applications Outside Cluster |
+
+---
+
+# CI/CD Ports
+
+| Port | Tool | Purpose |
+|------|------|----------|
+| 8080 | Jenkins | CI/CD Server |
+| 50000 | Jenkins Agent | Communication with Jenkins Agent |
+| 8081 | Nexus Repository | Artifact Repository |
+| 9000 | SonarQube | Code Quality Analysis |
+
+---
+
+# Monitoring & Logging
+
+| Port | Tool | Purpose |
+|------|------|----------|
+| 9090 | Prometheus | Metrics Collection |
+| 3000 | Grafana | Monitoring Dashboard |
+| 5601 | Kibana | Log Visualization |
+| 9200 | Elasticsearch | Search & Log Storage |
+| 5044 | Logstash Beats Input | Receive Logs from Filebeat |
+| 514 | Syslog | Centralized Logging |
+
+---
+
+# Messaging
+
+| Port | Tool | Purpose |
+|------|------|----------|
+| 5672 | RabbitMQ | Message Broker |
+| 9092 | Apache Kafka | Event Streaming Platform |
+| 2181 | ZooKeeper | Kafka Coordination (Legacy Deployments) |
+
+---
+
+# AWS Services
+
+| Port | Service | Purpose |
+|------|----------|----------|
+| 22 | EC2 | SSH Access |
+| 80 | EC2 / ALB | HTTP Traffic |
+| 443 | EC2 / ALB | HTTPS Traffic |
+| 3306 | RDS MySQL | Database Access |
+| 5432 | RDS PostgreSQL | Database Access |
+
+---
+
+# Port Ranges
+
+| Range | Purpose |
+|--------|----------|
+| 0-1023 | Well-Known Ports |
+| 1024-49151 | Registered Ports |
+| 49152-65535 | Dynamic / Ephemeral Ports |
+| 30000-32767 | Kubernetes NodePort Range |
+
+---
+
+# ⭐ Most Important Ports for DevOps Interviews
+
+| Port | Service |
+|------|----------|
+| 22 | SSH |
+| 53 | DNS |
+| 80 | HTTP |
+| 123 | NTP |
+| 443 | HTTPS |
+| 3306 | MySQL |
+| 5432 | PostgreSQL |
+| 6379 | Redis |
+| 6443 | Kubernetes API Server |
+| 8080 | Jenkins |
+| 8081 | Nexus Repository |
+| 9000 | SonarQube |
+| 9090 | Prometheus |
+| 9200 | Elasticsearch |
+| 3000 | Grafana |
+| 27017 | MongoDB |
+| 50000 | Jenkins Agent |
+
+---
+
+# Interview Tips
+
+- SSH → 22
+- HTTP → 80
+- HTTPS → 443
+- MySQL → 3306
+- PostgreSQL → 5432
+- Redis → 6379
+- Kubernetes API Server → 6443
+- NodePort → 30000-32767
+- Jenkins → 8080
+- SonarQube → 9000
+- Prometheus → 9090
+- Grafana → 3000
