@@ -1,0 +1,66 @@
+# Common Ports Cheat Sheet
+
+The following are the most commonly used ports in AWS, Linux, DevOps, and Production environments.
+
+| Port | Protocol | Service | Common Use |
+|------|----------|---------|------------|
+| 20 | TCP | FTP (Data) | File Transfer Data Channel |
+| 21 | TCP | FTP (Control) | File Transfer |
+| 22 | TCP | SSH | Secure Remote Login to Linux Servers |
+| 23 | TCP | Telnet | Remote Login (Not Secure) |
+| 25 | TCP | SMTP | Sending Emails |
+| 53 | TCP/UDP | DNS | Domain Name Resolution |
+| 67 | UDP | DHCP Server | Assign IP Addresses |
+| 68 | UDP | DHCP Client | Receive IP Address |
+| 69 | UDP | TFTP | Lightweight File Transfer |
+| 80 | TCP | HTTP | Web Applications |
+| 110 | TCP | POP3 | Receive Emails |
+| 123 | UDP | NTP | Time Synchronization |
+| 135 | TCP | RPC | Windows Remote Procedure Call |
+| 137 | UDP | NetBIOS Name Service | Windows Name Resolution |
+| 138 | UDP | NetBIOS Datagram | Windows File Sharing |
+| 139 | TCP | NetBIOS Session | Windows File Sharing |
+| 143 | TCP | IMAP | Receive Emails |
+| 161 | UDP | SNMP | Network Monitoring |
+| 162 | UDP | SNMP Trap | Network Alerts |
+| 389 | TCP/UDP | LDAP | Directory Services |
+| 443 | TCP | HTTPS | Secure Websites |
+| 445 | TCP | SMB/CIFS | Windows File Sharing |
+| 465 | TCP | SMTPS | Secure Email Sending |
+| 514 | UDP | Syslog | Log Collection |
+| 587 | TCP | SMTP Submission | Secure Email Sending |
+| 636 | TCP | LDAPS | Secure LDAP |
+| 993 | TCP | IMAPS | Secure IMAP |
+| 995 | TCP | POP3S | Secure POP3 |
+| 1433 | TCP | Microsoft SQL Server | Database |
+| 1521 | TCP | Oracle Database | Database |
+| 2049 | TCP | NFS | Network File System |
+| 2181 | TCP | Apache ZooKeeper | Distributed Coordination |
+| 2375 | TCP | Docker | Docker API (Non-TLS) |
+| 2376 | TCP | Docker | Docker API (TLS) |
+| 3000 | TCP | Grafana / Node.js | Dashboards & Web Apps |
+| 3306 | TCP | MySQL | Database |
+| 3389 | TCP | RDP | Windows Remote Desktop |
+| 4000 | TCP | SonarQube (Optional) | Code Quality Server |
+| 5000 | TCP | Flask / Registry | Python Apps / Docker Registry |
+| 5432 | TCP | PostgreSQL | Database |
+| 5601 | TCP | Kibana | Log Visualization |
+| 5672 | TCP | RabbitMQ | Message Queue |
+| 5900 | TCP | VNC | Remote Desktop |
+| 5984 | TCP | CouchDB | NoSQL Database |
+| 6379 | TCP | Redis | In-Memory Database |
+| 6443 | TCP | Kubernetes API Server | Kubernetes Control Plane |
+| 7001 | TCP | WebLogic | Java Application Server |
+| 8080 | TCP | Tomcat / Jenkins | Web Applications |
+| 8081 | TCP | Nexus Repository | Artifact Repository |
+| 8086 | TCP | InfluxDB | Time-Series Database |
+| 8443 | TCP | Kubernetes Dashboard / HTTPS | Secure Web Interface |
+| 9000 | TCP | SonarQube | Code Quality |
+| 9090 | TCP | Prometheus | Monitoring |
+| 9092 | TCP | Apache Kafka | Event Streaming |
+| 9200 | TCP | Elasticsearch | Search Engine |
+| 9300 | TCP | Elasticsearch Cluster | Node Communication |
+| 9418 | TCP | Git | Git Protocol |
+| 10250 | TCP | Kubernetes Kubelet | Node Communication |
+| 27017 | TCP | MongoDB | NoSQL Database |
+| 50000 | TCP | Jenkins Agent | Jenkins Build Agent |
