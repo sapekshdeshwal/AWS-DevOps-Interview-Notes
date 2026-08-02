@@ -667,6 +667,382 @@ Advantages:
 | Commonly Used | Yes | Increasing Adoption |
 
 ---
+# IP Address Classes
+
+## What is an IP Address?
+
+An **IP (Internet Protocol) Address** is a unique address assigned to every device connected to a network. It helps devices identify and communicate with each other.
+
+**Example:**
+
+```text
+Laptop  → 192.168.1.10
+Phone   → 192.168.1.20
+Printer → 192.168.1.30
+```
+
+Just like every house has a postal address, every device on a network has an IP address.
+
+---
+
+# Structure of an IPv4 Address
+
+An IPv4 address consists of **32 bits**, divided into **4 octets**.
+
+**Example:**
+
+```text
+192.168.1.10
+```
+
+Breakdown:
+
+```text
+192 | 168 | 1 | 10
+```
+
+* Total Octets: **4**
+* Each Octet: **8 bits**
+* Total Bits: **32 bits**
+* Value of each octet: **0–255**
+
+---
+
+# Why Were IP Address Classes Created?
+
+In the early days of networking, different organizations required different numbers of IP addresses.
+
+For example:
+
+* Small office → Few devices
+* University → Thousands of devices
+* Large enterprise → Millions of devices
+
+To allocate IP addresses efficiently, IPv4 addresses were divided into **five classes**.
+
+---
+
+# IP Address Classes
+
+| Class | First Octet Range | Default Subnet Mask | Default CIDR | Typical Usage   |
+| ----- | ----------------- | ------------------- | ------------ | --------------- |
+| A     | 1 – 126           | 255.0.0.0           | /8           | Large Networks  |
+| B     | 128 – 191         | 255.255.0.0         | /16          | Medium Networks |
+| C     | 192 – 223         | 255.255.255.0       | /24          | Small Networks  |
+| D     | 224 – 239         | N/A                 | N/A          | Multicast       |
+| E     | 240 – 255         | N/A                 | N/A          | Experimental    |
+
+> **Note:** 127.x.x.x is reserved for **Loopback (localhost)** and is not used as a normal Class A network.
+
+---
+
+# Class A
+
+### Range
+
+```text
+1.0.0.0 → 126.255.255.255
+```
+
+### Default Subnet Mask
+
+```text
+255.0.0.0
+```
+
+### Default CIDR
+
+```text
+/8
+```
+
+### Network and Host Portion
+
+```text
+10 . 0 . 0 . 0
+
+Network | Host | Host | Host
+```
+
+### Suitable For
+
+Large organizations requiring a very large number of hosts.
+
+### Example
+
+```text
+10.1.1.1
+25.50.60.70
+100.20.30.40
+```
+
+---
+
+# Class B
+
+### Range
+
+```text
+128.0.0.0 → 191.255.255.255
+```
+
+### Default Subnet Mask
+
+```text
+255.255.0.0
+```
+
+### Default CIDR
+
+```text
+/16
+```
+
+### Network and Host Portion
+
+```text
+172 .16 .0 .0
+
+Network | Network | Host | Host
+```
+
+### Suitable For
+
+Medium-sized organizations.
+
+### Example
+
+```text
+150.10.20.30
+172.16.1.10
+191.100.20.1
+```
+
+---
+
+# Class C
+
+### Range
+
+```text
+192.0.0.0 → 223.255.255.255
+```
+
+### Default Subnet Mask
+
+```text
+255.255.255.0
+```
+
+### Default CIDR
+
+```text
+/24
+```
+
+### Network and Host Portion
+
+```text
+192 .168 .1 .0
+
+Network | Network | Network | Host
+```
+
+### Suitable For
+
+Small organizations and home networks.
+
+### Example
+
+```text
+192.168.1.10
+200.10.20.30
+```
+
+---
+
+# Class D
+
+### Range
+
+```text
+224.0.0.0 → 239.255.255.255
+```
+
+### Purpose
+
+Used for **Multicast** communication.
+
+### Example
+
+```text
+224.1.1.1
+```
+
+Examples of multicast usage:
+
+* Live video streaming
+* IPTV
+* Video conferencing
+
+---
+
+# Class E
+
+### Range
+
+```text
+240.0.0.0 → 255.255.255.255
+```
+
+### Purpose
+
+Reserved for:
+
+* Research
+* Experimental purposes
+
+Not assigned to normal hosts.
+
+---
+
+# Private IP Address Ranges
+
+These ranges are reserved for private networks and are commonly used inside AWS VPCs.
+
+| Class | Private Range                     |
+| ----- | --------------------------------- |
+| A     | 10.0.0.0/8                        |
+| B     | 172.16.0.0 – 172.31.255.255 (/12) |
+| C     | 192.168.0.0/16                    |
+
+Examples:
+
+```text
+10.0.0.0/16
+172.16.0.0/16
+192.168.1.0/24
+```
+
+---
+
+# Easy Trick to Remember
+
+Simply check the **first octet** of the IP address.
+
+| First Octet | Class   |
+| ----------- | ------- |
+| 1 – 126     | Class A |
+| 128 – 191   | Class B |
+| 192 – 223   | Class C |
+| 224 – 239   | Class D |
+| 240 – 255   | Class E |
+
+---
+
+# Why Class A Has More Hosts Than Class C
+
+Class A uses only the **first octet** to identify the network, leaving **three octets** for host addresses.
+
+```text
+Class A
+
+10 .0 .0 .0
+
+Network | Host | Host | Host
+```
+
+Class B leaves only **two octets** for hosts.
+
+```text
+172 .16 .0 .0
+
+Network | Network | Host | Host
+```
+
+Class C leaves only **one octet** for hosts.
+
+```text
+192 .168 .1 .0
+
+Network | Network | Network | Host
+```
+
+As the number of **network bits increases**, the number of **host bits decreases**.
+
+---
+
+# Do We Still Use IP Classes?
+
+Modern networking uses **CIDR (Classless Inter-Domain Routing)** instead of classful addressing.
+
+Examples:
+
+```text
+10.0.0.0/16
+172.16.0.0/20
+192.168.1.0/24
+```
+
+CIDR allows flexible network sizing and is used in AWS, Azure, and modern enterprise networks.
+
+---
+
+# AWS Interview Tip
+
+**Q: Do we use IP classes in AWS?**
+
+**Answer:**
+
+AWS VPCs use **CIDR blocks** rather than traditional classful networking. However, understanding IP classes helps identify address ranges and recognize the commonly used private IP ranges:
+
+* 10.0.0.0/8
+* 172.16.0.0/12
+* 192.168.0.0/16
+
+---
+
+# Interview Questions
+
+### 1. What is an IP Address?
+
+An IP address is a unique logical address assigned to a device that enables communication over a network.
+
+### 2. How many IP address classes are there?
+
+There are **five classes**:
+
+* Class A
+* Class B
+* Class C
+* Class D
+* Class E
+
+### 3. Which class is used for multicast?
+
+**Class D**
+
+### 4. Which class is reserved for research and experimentation?
+
+**Class E**
+
+### 5. Which private IP ranges are commonly used in AWS?
+
+* 10.0.0.0/8
+* 172.16.0.0/12
+* 192.168.0.0/16
+
+---
+
+# Key Takeaways
+
+* IPv4 consists of **32 bits** divided into **4 octets**.
+* IP classes were introduced to allocate addresses based on organization size.
+* Class A supports the largest number of hosts, while Class C supports fewer.
+* Class D is used for multicast.
+* Class E is reserved for experimental purposes.
+* Modern cloud platforms use **CIDR**, but understanding IP classes is important for networking fundamentals and interviews.
+
 
 # Public IP Address
 
